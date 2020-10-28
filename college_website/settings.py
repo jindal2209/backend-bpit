@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_backend',
     'corsheaders',
-#    'storages'
+   'storages'
 ]
 
 MIDDLEWARE = [
@@ -147,18 +147,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# AWS_ACCESS_KEY_ID = "AKIA6L4D2DGHUY5HU6O3"
-# AWS_SECRET_ACCESS_KEY = "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"
-# AWS_STORAGE_BUCKET_NAME = "djangobackendbpit"
+AWS_ACCESS_KEY_ID = " AKIA6M7S57GH275KPKJH"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "backendbpit"
+AWS_S3_ADDRESSING_STYLE = "virtual"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
 
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
 
-
-# AWS_S3_REGION_NAME = 'ap-south-1'
-# AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
@@ -168,3 +168,18 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
 MEDIA_URL="/media/"
 
 # django_heroku.settings(locals())
+
+
+
+# cors configuration
+# <?xml version="1.0" encoding="UTF-8"?>
+# <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+# <CORSRule>
+#     <AllowedOrigin>*</AllowedOrigin>
+#     <AllowedMethod>GET</AllowedMethod>
+#     <AllowedMethod>POST</AllowedMethod>
+#     <AllowedMethod>PUT</AllowedMethod>
+#     <AllowedMethod>DELETE</AllowedMethod>
+#     <AllowedHeader>*</AllowedHeader>
+# </CORSRule>
+# </CORSConfiguration>

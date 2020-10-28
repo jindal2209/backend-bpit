@@ -39,6 +39,9 @@ class Disclosures(models.Model):
     disclosures = models.FileField(upload_to="Diclosures/")
     date = models.DateField(null=False)
 
+    class Meta:
+        ordering = ["-date"]
+
 class Marquee(models.Model):
     marquee_text = models.TextField()
     
@@ -201,10 +204,15 @@ class Society(models.Model):
     description = models.TextField(max_length=3000)
     pics = models.ManyToManyField(SocietyPics)
 
+
 class NIRF(models.Model):
     nirf_name = models.CharField(max_length=2000)
     date_of_upload = models.DateField()
     file = models.FileField(upload_to="NIRF")
+
+    class Meta:
+        ordering = ['-date_of_upload']
+
 
 class LabResources(models.Model):
     branch = models.ForeignKey(Branch,on_delete=models.CASCADE)
